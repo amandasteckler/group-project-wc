@@ -1,1 +1,10 @@
-<%= link_to('Sign Up', new_user_path) %>
+<%= link_to('Sign Up', new_user_path) %><br><br>
+Sign In:
+<br>
+<%= form_tag('/login') do %>
+  <%= label_tag 'Email' %>
+  <%= text_field_tag 'user[email]' %>
+  <%= label_tag 'Password' %>
+  <%= password_field_tag 'user[password]' %>
+  <%= submit_tag 'Sign In' %>
+<% end %>

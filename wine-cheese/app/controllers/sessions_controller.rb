@@ -1,22 +1,23 @@
 class SessionsController < ApplicationController
-  def index
-  end
-
-  def show
-  end
+  # skip_before_action :require_login, only: [:new, :create]
 
   def new
   end
 
   def create
-  end
-
-  def edit
-  end
-
-  def update
+    user = User.find_by(email: params[:user][:email])
+    if user && user.authenticate(params[:user][:password])
+      session[:user_id] = user.id
+      redirect_to user_path(user)
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
-  end
+    session[:user_id] = nil
+    redirect_to login_path
+   end
+
+
 end
