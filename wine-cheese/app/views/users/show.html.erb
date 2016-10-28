@@ -1,1 +1,7 @@
-<%=@user.name%>
+<%=@user.name%><br>
+<h2>Posts</h2>
+
+<%=@user.poster.posts.each do |post| %>
+  <%=post.title%><br>
+  <%=post.content%><br>
+<%end%>
