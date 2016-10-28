@@ -16,12 +16,14 @@ RSpec.describe User, type: :model do
     end
   end
 
-  describe ".all_users_named_scott" do
-    let(:user) {User.create(name: 'fred')}
-    it 'retrieves all users named scott' do
-      expect(User.all_users_named_bob.map(&name)).to_not include(['Scott'])
-    end
-  end
+
+
+  # describe ".all_users_named_scott" do
+  #   let(:user) {User.create(name: 'fred')}
+  #   it 'retrieves all users named scott' do
+  #     expect(User.all_users_named_bob.map(&name)).to_not include(['Scott'])
+  #   end
+  # end
 
 
 

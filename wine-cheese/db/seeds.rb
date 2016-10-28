@@ -35,8 +35,10 @@ cheese1 = Cheese.create(name: "Brie", cheese_brand_id: cheese_brand1.id)
 pairing1 = Pairing.create(wine_id: wine1.id, cheese_id: cheese1.id)
 
 post1 = Post.create(poster_id: bob_poster.id, pairing_id: pairing1.id, title: "First Post", content: "THIS IS BOB'S CONTENT!")
+post2 = Post.create(poster_id: bob_poster.id, pairing_id: pairing1.id, title: "Second Post", content: "THIS IS BOB'S SECOND CONTENT!")
+
 
 bob_reviewer = Reviewer.create(user_id: bob.id)
 bob_reviewer.user = bob
 
-review1 = Review.create(reviewer_id: reviewer1.id, post_id: post1.id)
+bob_review = Review.create(reviewer_id: bob_reviewer.id, post_id: post1.id)
