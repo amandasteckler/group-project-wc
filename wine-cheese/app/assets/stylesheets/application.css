@@ -12,4 +12,11 @@
  *
  *= require_tree .
  *= require_self
- */
+*/
+
+body {
+  background: #eeeeee;
+}
+p.fancy {
+  font-family: cursive;
+}

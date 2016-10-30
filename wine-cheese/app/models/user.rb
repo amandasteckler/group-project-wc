@@ -8,9 +8,40 @@ class User < ApplicationRecord
   has_one :reviewer
   has_one :poster
 
-  
-  # def name
-  #   self[:name].capitalize
-  # end
+
+  def name
+    self[:name].capitalize
+  end
+
+  def age_requirement
+    if self.age < 21
+      "Aren't you a little young to be here"
+    else
+      "So what pairing do you suggest?"
+    end
+  end
+
+  def activity_monitoring
+    post_count = self.poster.posts.count
+    if post_count < 3
+      "You really don't know much about wine, do you?"
+    elsif post_count < 5
+      "Alright, so you know some stuff."
+    else
+      "Maybe try drinking water once in a while..."
+    end
+  end
+
+  def password_security
+    if self.password.include?(self.name)
+      "And while you're at it, remember to think of a more original password in the future..."
+    end
+  end
+
+  def passive_aggressive
+    if Time.now.hour > 17
+      "I guess it's five o'clock somewhere..."
+    end
+  end
 
 end

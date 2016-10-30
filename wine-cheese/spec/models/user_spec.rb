@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
 
-  let(:user) { User.create(name: 'scott', email: 'scott@yay.com')}
+  let(:user) { User.create(name: 'scott', email: 'scott@yay.com', age: 25)}
 
   describe '#name' do
     it 'capitalizes the name' do
@@ -15,6 +15,12 @@ RSpec.describe User, type: :model do
       expect(user.email).to eq('scott@yay.com')
     end
   end
+
+  # describe '#age_requirement' do
+  #   it 'gives the user a response depending on their age' do
+  #     expect(user.age_requirement).to eq('So what pairing do you suggest?')
+  #   end
+  # end
 
 
 
