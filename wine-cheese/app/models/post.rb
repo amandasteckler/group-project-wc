@@ -5,10 +5,6 @@ class Post < ApplicationRecord
   belongs_to :pairing
 end
 
-def reaction
-  "hi"
-end
-
 def post_reaction
   wine = self.pairing.wine
   cheese self.pairing.cheese
