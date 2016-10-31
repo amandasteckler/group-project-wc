@@ -3,6 +3,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    @post = Post.find(params[:id])
+    session[:post_id] = @post.id
+  
+    # @post = Post.find(session[:post_id])
+    @reviews = @post.reviews
   end
 
   def new

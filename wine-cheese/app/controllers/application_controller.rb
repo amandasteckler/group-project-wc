@@ -9,6 +9,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  # def current_post
+  #  if session[:post_id]
+  #    current_post == Post.find(session[:post_id])
+  #  end
+  # end
+
   def logged_in?
     !!current_user
   end

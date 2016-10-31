@@ -5,12 +5,11 @@
 Hello, <%=@user.name%>!<br>
 <i><%= "#{@user.name.capitalize} is #{@user.mood}"%></i>
 
-
 <br>
 <br>
 <h1>Posts</h1>
 <% @user.all_posts.each do |post| %>
-  <h2><%=post.title%><br></h2>
+  <h2> <%=link_to post.title, post_path(post) %><br></h2>
   <%=post.content%><br>
   <%=post.pairing.wine.wine_brand.company + " " +  post.pairing.wine.category.name + " + " + post.pairing.cheese.cheese_brand.name + " " +  post.pairing.cheese.name%><br>
   <br>
@@ -25,6 +24,7 @@ Hello, <%=@user.name%>!<br>
 <%= wine %>
 <% end %>
 
+___________________________________________________
 
 <h2>Cheese Platter</h2>
   <% @user.cheese_platter.each do |cheese| %>
@@ -35,6 +35,7 @@ Hello, <%=@user.name%>!<br>
 
 <%=@user.recent_update %>
 
+___________________________________________________
 
 <h2>Socials</h2>
 Join me!

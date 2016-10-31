@@ -1,0 +1,17 @@
+
+<h2> <%= @post.title %> </h2>
+<%=@post.pairing.wine.wine_brand.company + " " +  @post.pairing.wine.category.name + " + " + @post.pairing.cheese.cheese_brand.name + " " +  @post.pairing.cheese.name%>
+<br><br><%=@post.content%>
+
+
+
+<h2>Reviews:</h2>
+<% @reviews.each do |review| %>
+<%= review.title %>
+<%= review.content %>
+by: <%=review.reviewer.user.name %>
+<% end %>
+
+
+
+<%= link_to "Add a review!!!", new_review_path %>
