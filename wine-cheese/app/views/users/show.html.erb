@@ -8,10 +8,15 @@ Hello, <%=@user.name%>!<br>
 
 <br>
 <br>
-<h2>Posts</h2>
+<h1>Posts</h1>
 <% @user.all_posts.each do |post| %>
-  <%=post.title%><br>
+  <h2><%=post.title%><br></h2>
   <%=post.content%><br>
+  <%=post.pairing.wine.wine_brand.company + " " +  post.pairing.wine.category.name + " + " + post.pairing.cheese.cheese_brand.name + " " +  post.pairing.cheese.name%><br>
+  <br>
+
+  ___________________________________________________
+  <br>
 <%end%>
 
 

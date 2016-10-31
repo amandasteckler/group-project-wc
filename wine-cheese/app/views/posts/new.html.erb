@@ -10,3 +10,5 @@
 <%=f.collection_select :pairing_id, Pairing.all, :id, :pairing_with_wine_cheese_names %>
 <%= f.submit 'Create Post' %>
 <% end %>
+
+<%= link_to "Don't See Your Pairing Here? Create A New One", new_pairing_path %>

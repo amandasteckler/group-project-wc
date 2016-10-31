@@ -1,0 +1,6 @@
+
+<%= form_for(@pairing) do |f| %>
+<%=f.collection_select :wine_id, Wine.all, :id, :wine_names %>
+<%=f.collection_select :cheese_id, Cheese.all, :id, :cheese_names %>
+<%= f.submit 'Create Pairing' %>
+<% end %>
