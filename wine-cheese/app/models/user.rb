@@ -30,7 +30,7 @@ class User < ApplicationRecord
 
   def password_security
     if self.password.include?(self.name)
-      "And while you're at it, remember to think of a more secure password in the future..."
+      "In between your next glass, remember to think of a more secure password in the future..."
     end
   end
 
