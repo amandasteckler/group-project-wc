@@ -15,15 +15,18 @@ RSpec.describe User, type: :model do
       expect(user.email).to eq('scott@yay.com')
     end
   end
+#----Krissa's tests
 
-
-
-  # describe ".all_users_named_scott" do
-  #   let(:user) {User.create(name: 'fred')}
-  #   it 'retrieves all users named scott' do
-  #     expect(User.all_users_named_bob.map(&name)).to_not include(['Scott'])
-  #   end
-  # end
+  describe '#mood' do
+#     drink_meter = 1
+#     age = 36
+#     if drink_meter >= 7
+#       it 'sees the user as someone who drinks too much' do
+#         expect(user.mood).to eq("A 36-year old currently obsessed with #{self.all_posts.last.pairing.wine.wine_brand.name}")
+# )
+#       end
+#     end
+  end
 
 
 

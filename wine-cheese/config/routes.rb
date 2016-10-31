@@ -17,6 +17,7 @@ Rails.application.routes.draw do
 
   get '/login', to: 'users#index'
   get '/logout', to: 'sessions#destroy'
+
   post '/login', to: 'sessions#create'
   post '/destroy', to: 'sessions#destroy'
 end

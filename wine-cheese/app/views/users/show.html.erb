@@ -1,7 +1,35 @@
-<%=@user.name%><br>
-<h2>Posts</h2>
 
-<% @user.poster.posts.each do |post| %>
+<br>
+<br>
+<br>
+Hello, <%=@user.name%>!<br>
+<i><%= "#{@user.name.capitalize} is #{@user.mood}"%></i>
+
+
+<br>
+<br>
+<h2>Posts</h2>
+<% @user.all_posts.each do |post| %>
   <%=post.title%><br>
   <%=post.content%><br>
 <%end%>
+
+
+<h2>Wine Cellar 1</h2>
+<% @user.wine_list.each do |wine| %>
+<%= wine %>
+<% end %>
+
+
+<h2>Cheese Platter</h2>
+  <% @user.cheese_platter.each do |cheese| %>
+  <%= cheese %>
+<% end %>
+
+<h2>Last Pairing</h2>
+
+<%=@user.recent_update %>
+
+
+<h2>Socials</h2>
+Join me!

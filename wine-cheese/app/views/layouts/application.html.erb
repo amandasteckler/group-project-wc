@@ -1,14 +1,29 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
     <title>WineCheese</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <style>
+
+         body {
+           background-color: #D1ABAD ;
+           color: #3C3A66 ;
+           font-family: 'Coiny', cursive;
+           text-align: center;
+         }
+
+
+       </style>
   </head>
 
   <body>
+    <br>
+    <img src="http://i66.tinypic.com/24vnszp.png">
+    <br>
     <% if logged_in? %>
       <%= link_to "Log out", logout_path %>
     <% end %>
