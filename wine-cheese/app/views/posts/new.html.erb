@@ -5,19 +5,8 @@
 <%= f.text_field :title %>
 <%= f.label :content %>
 <%= f.text_area :content %>
-<%= f.label :wine_brand %>
-<%= f.text_area :wine_brand %>
-<%= f.label :region %>
-<%= f.text_area :region %>
-<%= f.label :category %>
-<%= f.text_area :category %>
-<%= f.label :year %>
-<%= f.text_area :year %>
-<%= f.label :cheese_name %>
-<%= f.text_area :cheese_name %>
-<%= f.label :cheese_brand %>
-<%= f.text_area :cheese_brand %>
+<%= f.label "Select a Pairing" %>
 
-
+<%=f.collection_select :pairing_id, Pairing.all, :id, :pairing_with_wine_cheese_names %>
 <%= f.submit 'Create Post' %>
 <% end %>
