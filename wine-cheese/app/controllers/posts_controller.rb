@@ -5,9 +5,10 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     session[:post_id] = @post.id
-  
+
     # @post = Post.find(session[:post_id])
     @reviews = @post.reviews
+
   end
 
   def new
@@ -22,7 +23,7 @@ class PostsController < ApplicationController
     @post = Post.new(poster_id: @poster.id, pairing_id: params[:post][:pairing_id], title: params[:post][:title], content: params[:post][:content])
 
     if @post.save
-
+      flash[:notice]=@post.poster.user.wine_year_critique
       redirect_to user_path(@user)
     else
       render :new

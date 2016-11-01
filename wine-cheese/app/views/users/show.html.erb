@@ -6,7 +6,13 @@ Welcome to <%=@user.name%>'s page.<br>
 <i><%= "#{@user.name.capitalize} is #{@user.mood}"%></i>
 
 <br>
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+___________________________________________________
+
+<br><% if flash[:notice] %>
+   <div class="notice"><%= flash[:notice] %></div>
+ <% end %>
+ <br>
+ ___________________________________________________
 
 <br>
 <h1>Posts</h1>

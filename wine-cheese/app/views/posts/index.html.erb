@@ -1,13 +1,14 @@
-<h1>Recent Wine Pairings:</h1>
-
 
 <%= javascript_include_tag "https://www.google.com/jsapi", "chartkick" %>
-<%= column_chart({"Pretentious Pairing#1"=>1, "THIS IS BOB'S CONTENT!"=>1} ) %>
+
+
+<h1>The Popular Cheese Platter</h1>
+<%= column_chart({"Cheddar"=>4,"Swiss"=>4, "Colby-Jack"=>3, "Monterey Jack"=>3,"Bleu"=>2,"Provalone"=>2, "Mozarella"=>2, "Muenster"=>2}) %>
+
+
+<h1>Most Frequently Paired Wine</h1>
+<%= column_chart({"Kendall-Jackson Stature"=>12, "Catena"=>3 ,"Sharrot"=>2 ,"Two-Buck-Chuck"=>1}) %>
 
 
 <h1>Recent Wine Regions:</h1>
 <%= column_chart({"Argentina"=>1, "Jersey"=>1} ) %>
-
-
-<h1>The Popular Cheese Platter</h1>
-<%= column_chart({"Brie"=>1, "chechechecheddar!"=>1}) %>

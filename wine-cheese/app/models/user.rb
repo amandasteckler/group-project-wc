@@ -82,6 +82,18 @@ class User < ApplicationRecord
      "Maybe try drinking water once in a while..."
    end
  end
+
+ def wine_year_critique
+   if self.poster.posts.last.pairing.wine.year > 2015
+     "You should try an older vintage"
+   elsif self.poster.posts.last.pairing.wine.year > 2008
+     "What a tasteful choice!"
+   else
+     "You better check first that your wine hasn't turned into vinegar..."
+   end
+ end
+
+
   #
   # def password_security
   #    if self.password.include?(self.name)
