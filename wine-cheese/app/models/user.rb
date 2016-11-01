@@ -39,7 +39,9 @@ class User < ApplicationRecord
 
 
   def recent_update
-     "#{self.name} recently tried #{recent_wine} with #{recent_cheese} last #{recent_date}. More on #{self.name}'s pairing: #{self.all_posts.last.title}." unless self.all_posts.count == 0
+    unless self.all_posts.count == 0
+     "#{self.name} recently tried #{recent_wine} with #{recent_cheese} last #{recent_date}. More on #{self.name}'s pairing: "
+   end
   end
 
   # def link_to_pairing
@@ -70,7 +72,7 @@ class User < ApplicationRecord
    end
   end
 
-  # 
+  #
   # def password_security
   #    if self.password.include?(self.name)
   #      "In between your next glass, remember to think of a more secure password in the future..."

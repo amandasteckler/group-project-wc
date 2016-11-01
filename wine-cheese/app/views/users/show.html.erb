@@ -45,12 +45,7 @@ ___________________________________________________
 <h1>Last Pairing</h1>
 
 <%=@user.recent_update %>
+<%= link_to @user.poster.posts.last.title, post_path(@user.poster.posts.last) %>
+
 
 <br>
-
-___________________________________________________
-
-<br>
-
-<h2>Socials</h2>
-Join me!

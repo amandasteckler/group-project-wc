@@ -16,17 +16,36 @@
            text-align: center;
          }
 
+         #navbar {
+          list-style-type: none;
+          margin: 0;
+          padding: 0;
+          overflow: hidden;
+        }
+
+        .navbaritem {
+          float: left;
+          margin-right: 20px;
+        }
 
        </style>
   </head>
 
   <body>
+
+    <% if logged_in? %>
+    <ul id='navbar'>
+      <li class="navbaritem"><a href="/users/1/edit">Edit Profile</a></li>
+      <li class="navbaritem"><a href="/posts/new">Create A Post</a></li>
+      <li class="navbaritem"><a href="/users/<%=session[:user_id]%>">View Profile</a></li>
+      <li class="navbaritem"><%= link_to "Analytics", posts_path %></li>
+      <li class="navbaritem"><%= link_to "Log out", logout_path %></li>
+    </ul>
+
+    <% end %>
     <br>
     <img src="http://i66.tinypic.com/24vnszp.png">
     <br>
-    <% if logged_in? %>
-      <%= link_to "Log out", logout_path %>
-    <% end %>
     <%= yield %>
   </body>
 </html>
