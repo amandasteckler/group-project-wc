@@ -36,8 +36,7 @@ ___________________________________________________
 
 <h1>Wine Cellar</h1>
 <% @user.wine_list.each do |wine| %>
-  · <%= wine %>
-  <br>
+  · <%= wine %><br>
 <% end %>
 
 <br>
@@ -48,7 +47,7 @@ ___________________________________________________
 
 <h1>Cheese Platter</h1>
   <% @user.cheese_platter.each do |cheese| %>
-  -<%= cheese %>
+  · <%= cheese %><br>
 <% end %>
 <br>
 

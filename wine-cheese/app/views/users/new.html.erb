@@ -1,11 +1,11 @@
 <%= form_for @user do |f|%>
-<%= f.label "Name"  %><br>
+<%= f.label "Name: "  %><br>
 <%= f.text_field :name%><br>
-<%= f.label "Age"  %><br>
+<%= f.label "Age: "  %><br>
 <%= f.text_field :age%><br>
-<%= f.label "Email"  %><br>
+<%= f.label "Email: "  %><br>
 <%= f.text_field :email%><br>
-<%= f.label "Password"  %><br>
+<%= f.label "Password: "  %><br>
 <%= f.password_field :password %><br>
-<%= f.submit 'Create Account' %><br>
+<%= f.submit 'Create Account ' %><br>
 <%end%>

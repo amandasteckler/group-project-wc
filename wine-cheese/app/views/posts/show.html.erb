@@ -11,11 +11,11 @@
 
 <h2>Reviews:</h2>
 <% @reviews.each do |review| %>
-<%= review.title %>
+<u><%= review.title %></u><br>
 <%= review.content %><br><br>
 by: <%=review.reviewer.user.name %><br><br>
 ~
-<br>
+<br><br>
 <% end %>
 
 <br><br>
