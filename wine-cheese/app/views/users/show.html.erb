@@ -2,17 +2,21 @@
 <br>
 <br>
 <br>
-Welcome to <%=@user.name%>'s page.<br>
+<h3>Welcome to <%=@user.name%>'s page.</h3><br>
 <i><%= "#{@user.name.capitalize} is #{@user.mood}"%></i>
 
 <br>
-___________________________________________________
+
 
 <br><% if flash[:notice] %>
+
+<br>
    <div class="notice"><%= flash[:notice] %></div>
+<br>
+___________________________________________________
  <% end %>
  <br>
- ___________________________________________________
+
 
 <br>
 <h1>Posts</h1>
@@ -51,11 +55,14 @@ ___________________________________________________
 <h1>Last Pairing</h1>
 
 <% if @user.all_posts.count == 0 %>
-  No pairings to show.
+  <%=@user.name%> doesn't know anything about wine yet.
 <% else %>
   <%= @user.recent_update %>
   <%= link_to @user.poster.posts.last.title, post_path(@user.poster.posts.last) %>
 <% end %>
 
-
+<br>
+<br>
+<br>
+<br>
 <br>

@@ -10,7 +10,7 @@
     <style>
 
          body {
-           background-color: #FCEFEA;
+           background-image: url(http://i66.tinypic.com/2z7r5n4.gif);
            color: #3C3A66 ;
            font-family: 'Raleway';
            text-align: center;
@@ -28,13 +28,11 @@
         }
 
         .navbaritem {
-          float: left;
+          float: center;
           margin-right: 20px;
 
-          background-color: #E5E5E5; /* Green */
-          border: solid;
-          border-width: 0.25px;
-          border-color: #30447E;
+          background-color: #F2FFE5; /* Green */
+          border: none;
           border-radius: 10px;
           color: white;
           padding: 10px 27px;
@@ -43,6 +41,30 @@
           display: inline-block;
           font-size: 16px;
         }
+
+        img {
+          height: 25%;
+          width: 25%;
+        }
+
+        body:background-image {
+          opacity: 0.2;
+        }
+
+        .signup {
+          background-color: #F2FFE5; /* Green */
+          border: solid;
+          border-width: 2.5px;
+          border-color: black;
+          border-radius: 10px;
+          color: white;
+          padding: 10px 27px;
+          text-align: center;
+          text-decoration: none;
+          display: inline-block;
+          font-size: 16px;
+        }
+
 
 
        </style>
@@ -58,11 +80,13 @@
       <li class="navbaritem"><%= link_to "Analytics", posts_path %></li>
       <li class="navbaritem"><%= link_to "Log out", logout_path %></li>
     </ul>
+    <%else %>
+    <img src="http://i67.tinypic.com/jz6t0y.gif">
+
+    <br>
 
     <% end %>
-    <br>
-    <img src="http://i66.tinypic.com/24vnszp.png">
-    <br>
+
     <%= yield %>
   </body>
 </html>

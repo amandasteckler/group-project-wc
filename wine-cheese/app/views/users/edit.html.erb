@@ -1,14 +1,21 @@
 <br>
-<h1>Welcome, <%= @user.name %></h1>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h1>Welcome, <%= @user.name %>.</h1>
 <em><%= User.passive_aggressive_greeting %></em><br>
 <em><%= @user.activity_monitoring %></em>
   <br>
 
-<h1>Your Posts:</h1>
+<h1>Here's what you've posted:</h1>
 <% @posts.each do |post| %>
   <%= link_to post.title, post_path(post) %>
 <% end %>
 <br>
 
-<h1>Create A Post</h1>
+<h1>What's a good pairing?</h1>
 <%= link_to 'Create A Post', new_post_path %>
