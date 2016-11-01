@@ -1,0 +1,12 @@
+<br>
+<h1>Add a Cheese:</h1>
+<br>
+<%= form_for(@cheese) do |f| %>
+<%= f.label "Brand: " %>
+<%=f.collection_select :cheese_brand_id, CheeseBrand.all, :id, :name %>
+<%=f.label "Name: "%>
+<%=f.text_field :name%>
+<%= f.submit 'Create Cheese' %>
+<% end %>
+<br><br><br>
+<%= link_to "Add A New Cheese Brand", new_cheese_brand_path %>

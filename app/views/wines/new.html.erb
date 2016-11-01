@@ -1,0 +1,20 @@
+<br>
+<h1>Add a Wine:</h1>
+<br>
+<%= form_for(@wine) do |f| %>
+<%= f.label "Brand: " %>
+<%=f.collection_select :wine_brand_id, WineBrand.all, :id, :wine_brand_company_and_names %>
+<%= f.label "Category: " %>
+<%=f.collection_select :category_id, Category.all, :id, :name %>
+<%= f.label "Region: " %>
+<%=f.collection_select :region_id, Region.all, :id, :name %>
+<%=f.label "Year: " %>
+<%=f.text_field :year %>
+<%= f.submit 'Create Wine' %>
+<% end %>
+
+<br><br><br>
+
+<u><%= link_to "Add A New Wine Brand", new_wine_brand_path %></u><br><br>
+<u><%= link_to "Add A New Category", new_category_path %></u><br><br>
+<u><%= link_to "Add A New Region", new_region_path %></u>

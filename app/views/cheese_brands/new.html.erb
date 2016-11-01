@@ -1,0 +1,8 @@
+<br>
+<h1>Add a Cheese Brand:</h1>
+<%= form_for(@cheese_brand) do |f| %>
+<%=f.label "Name: "%>
+<%=f.text_field :name%>
+
+<%= f.submit 'Create Cheese' %>
+<% end %>
