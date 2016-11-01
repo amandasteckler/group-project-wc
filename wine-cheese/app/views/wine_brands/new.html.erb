@@ -1,0 +1,8 @@
+
+<%= form_for(@wine_brand) do |f| %>
+<%= f.label "Company: " %>
+<%= f.text_field :company %>
+<%= f.label "Name: " %>
+<%= f.text_field :name %>
+<%= f.submit 'Create Wine Brand' %>
+<% end %>

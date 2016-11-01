@@ -1,3 +1,13 @@
-<br>this is your edit page<br>
+<br>
+<h1>Welcome, <%= @user.name %></h1>
+<em><%= User.passive_aggressive_greeting %></em>
+  <br>
 
-<%= link_to 'Create Your Awesome Post (If you can..)', new_post_path %>
+<h1>Your Posts:</h1>
+<% @posts.each do |post| %>
+  <%= link_to post.title, post_path(post) %>
+<% end %>
+<br>
+
+<h1>Create A Post</h1>
+<%= link_to 'Create A Post', new_post_path %>

@@ -6,9 +6,18 @@ class CategoriesController < ApplicationController
   end
 
   def new
+    @category = Category.new
   end
 
   def create
+
+    @category = Category.new(name: params[:category][:name])
+
+    if @category.save
+      redirect_to new_wine_path
+    else
+      render :new
+    end
   end
 
   def edit

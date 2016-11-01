@@ -5,6 +5,7 @@ class Wine < ApplicationRecord
   belongs_to :category
 
   def wine_names
-    self.wine_brand.company + " " + self.category.name
+    self.wine_brand.company + " " + self.wine_brand.name + " " + self.category.name
   end
+
 end

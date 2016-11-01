@@ -16,20 +16,20 @@ class User < ApplicationRecord
   end
 
   def cheese_platter
-    self.all_posts.map { |post| post.pairing.cheese.cheese_brand.name }.uniq
+    self.all_posts.map { |post| post.pairing.cheese.cheese_brand.name + " " + post.pairing.cheese.name }.uniq
   end
 
   def wine_list
-    self.all_posts.map { |post| post.pairing.wine.wine_brand.name }.uniq
+    self.all_posts.map { |post| post.pairing.wine.wine_brand.company + " " + post.pairing.wine.wine_brand.name + " " + post.pairing.wine.category.name }.uniq
   end
 
   def recent_wine
 
-    self.all_posts.last.pairing.wine.wine_brand.name unless self.all_posts.count == 0
+    self.all_posts.last.pairing.wine.wine_brand.company + " " + self.all_posts.last.pairing.wine.wine_brand.name + " " + self.all_posts.last.pairing.wine.category.name unless self.all_posts.count == 0
   end
 
   def recent_cheese
-    self.all_posts.last.pairing.cheese.cheese_brand.name unless self.all_posts.count == 0
+    self.all_posts.last.pairing.cheese.cheese_brand.name + " " + self.all_posts.last.pairing.cheese.name unless self.all_posts.count == 0
   end
 
   def recent_date
@@ -61,6 +61,21 @@ class User < ApplicationRecord
     end
 
   end
+
+
+
+  def self.passive_aggressive_greeting
+   if Time.now.hour < 17
+     "I guess it's five o'clock somewhere..."
+   end
+  end
+
+  # 
+  # def password_security
+  #    if self.password.include?(self.name)
+  #      "In between your next glass, remember to think of a more secure password in the future..."
+  #    end
+  # end
 
 
 
