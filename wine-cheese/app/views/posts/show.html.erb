@@ -1,17 +1,24 @@
-
+<br><br>
+<div class="postbg">
 <h2> <%= @post.title %> </h2>
 <%=@post.pairing.wine.wine_brand.company + " " +  @post.pairing.wine.category.name + " + " + @post.pairing.cheese.cheese_brand.name + " " +  @post.pairing.cheese.name%>
 <br><br><%=@post.content%>
+<br>
+<br>
+</div>
 
 
 
 <h2>Reviews:</h2>
 <% @reviews.each do |review| %>
 <%= review.title %>
-<%= review.content %>
-by: <%=review.reviewer.user.name %>
+<%= review.content %><br><br>
+by: <%=review.reviewer.user.name %><br><br>
+~
+<br>
 <% end %>
 
-<br>
+<br><br>
+--------<br><br>
 
-<%= link_to "Add a review", new_review_path %>
+<u><%= link_to "Add a review", new_review_path %></u>

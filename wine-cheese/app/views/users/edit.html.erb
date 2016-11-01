@@ -6,16 +6,20 @@
 <br>
 <br>
 
+<div class="left">
 <h1>Welcome, <%= @user.name %>.</h1>
 <em><%= User.passive_aggressive_greeting %></em><br>
 <em><%= @user.activity_monitoring %></em>
-  <br>
+</div>
 
-<h1>Here's what you've posted:</h1>
+<div class="middle">
+<h1>Your posts:</h1>
 <% @posts.each do |post| %>
   <%= link_to post.title, post_path(post) %>
 <% end %>
-<br>
+</div>
 
+<div class="right">
 <h1>What's a good pairing?</h1>
 <%= link_to 'Create A Post', new_post_path %>
+</div>
