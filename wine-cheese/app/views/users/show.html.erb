@@ -2,16 +2,18 @@
 <br>
 <br>
 <br>
-Hello, <%=@user.name%>!<br>
+Welcome to <%=@user.name%>'s page.<br>
 <i><%= "#{@user.name.capitalize} is #{@user.mood}"%></i>
 
 <br>
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 <br>
 <h1>Posts</h1>
 <% @user.all_posts.each do |post| %>
-  <h2> <%=link_to post.title, post_path(post) %><br></h2>
-  <%=post.content%><br>
-  <%=post.pairing.wine.wine_brand.company + " " +  post.pairing.wine.category.name + " + " + post.pairing.cheese.cheese_brand.name + " " +  post.pairing.cheese.name%><br>
+  <h2><%=link_to post.title, post_path(post) %><br></h2>
+    <em><%=post.pairing.wine.wine_brand.company + " " +  post.pairing.wine.category.name + " + " + post.pairing.cheese.cheese_brand.name + " " +  post.pairing.cheese.name%></em><br>
+    <%=post.content%><br>
   <br>
 
   ___________________________________________________
@@ -19,23 +21,36 @@ Hello, <%=@user.name%>!<br>
 <%end%>
 
 
-<h2>Wine Cellar 1</h2>
+<h1>Wine Cellar</h1>
 <% @user.wine_list.each do |wine| %>
-<%= wine %>
+  -<%= wine %>
 <% end %>
+
+<br>
 
 ___________________________________________________
 
-<h2>Cheese Platter</h2>
-  <% @user.cheese_platter.each do |cheese| %>
-  <%= cheese %>
-<% end %>
+<br>
 
-<h2>Last Pairing</h2>
+<h1>Cheese Platter</h1>
+  <% @user.cheese_platter.each do |cheese| %>
+  -<%= cheese %>
+<% end %>
+<br>
+
+___________________________________________________
+
+<br>
+
+<h1>Last Pairing</h1>
 
 <%=@user.recent_update %>
 
+<br>
+
 ___________________________________________________
+
+<br>
 
 <h2>Socials</h2>
 Join me!

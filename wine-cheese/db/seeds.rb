@@ -1,44 +1,186 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
+# cheese brand seeds
+CheeseBrand.create(name: "Kraft")
+CheeseBrand.create(name: "Cabot")
+CheeseBrand.create(name: "Organic Valley")
+CheeseBrand.create(name: "Sargento")
+CheeseBrand.create(name: "Stella")
 
+# cheese seeds
+Cheese.create(name: "Brie", cheese_brand_id: 2)
+Cheese.create(name: "Cheddar", cheese_brand_id: 3)
+Cheese.create(name: "Colby-Jack", cheese_brand_id: 3)
+Cheese.create(name: "Monterey Jack", cheese_brand_id: 3)
+Cheese.create(name: "Mozzarella", cheese_brand_id: 3)
+Cheese.create(name: "Swiss", cheese_brand_id: 3)
+Cheese.create(name: "Muenster", cheese_brand_id: 3)
+Cheese.create(name: "Pepper Jack", cheese_brand_id: 3)
+Cheese.create(name: "Bleu", cheese_brand_id: 4)
+Cheese.create(name: "Cheddar", cheese_brand_id: 4)
+Cheese.create(name: "Colby-Jack", cheese_brand_id: 4)
+Cheese.create(name: "Feta", cheese_brand_id: 4)
+Cheese.create(name: "Monterey Jack", cheese_brand_id: 4)
+Cheese.create(name: "Swiss", cheese_brand_id: 4)
+Cheese.create(name: "Farmers", cheese_brand_id: 4)
+Cheese.create(name: "Provolone", cheese_brand_id: 4)
+Cheese.create(name: "Cheddar", cheese_brand_id: 5)
+Cheese.create(name: "Colby-Jack", cheese_brand_id: 5)
+Cheese.create(name: "Monterey Jack", cheese_brand_id: 5)
+Cheese.create(name: "Muenster", cheese_brand_id: 5)
+Cheese.create(name: "Provolone", cheese_brand_id: 5)
+Cheese.create(name: "Swiss", cheese_brand_id: 5)
+Cheese.create(name: "Baby", cheese_brand_id: 6)
+Cheese.create(name: "Mozzarella", cheese_brand_id: 6)
+Cheese.create(name: "Cheddar", cheese_brand_id: 6)
+Cheese.create(name: "Bleu", cheese_brand_id: 6)
 
-bob = User.create(name: "Bob", email: "bob@bobby.com", password: "bob")
-dave = User.create(name: "Dave", email: "dave@dave.com", password: "dave")
-katrina = User.create(name: "Katrina", email: "katrina@katrina.com", password: "katrina")
+# wine brand seeds
+WineBrand.create(name: "Two-Buck-Chuck", company: "Trader Joes")
+WineBrand.create(name: "Stature", company: "Kendall-Jackson")
+WineBrand.create(name: "Catena", company: "High Mountain Vines")
+WineBrand.create(name: "Sharrott", company: "Sharrott Winery")
+WineBrand.create(name: "Hollington", company: "Flack Winery")
+WineBrand.create(name: "Flatiron", company: "Kriscotanda")
 
-bob_poster = Poster.create(user_id: bob.id)
-bob_poster.user = bob
+# category seeds
+Category.create(name: "Cabernet Sauvignon")
+Category.create(name: "Chardonnay")
+Category.create(name: "Malbec")
+Category.create(name: "Pinot Noir")
 
-dave_poster = Poster.create(user_id: dave.id)
-dave_poster.user = dave
+# region seeds
+Region.create(name: "Argentina")
+Region.create(name: "New Jersey")
+Region.create(name: "California")
+Region.create(name: "England")
+Region.create(name: "New York")
 
-katrina_poster = Poster.create(user_id: katrina.id)
-katrina_poster.user = katrina
+# wine seeds
+Wine.create(wine_brand_id: 5, category_id: 1, region_id: 4, year: 1982)
+Wine.create(wine_brand_id: 1, category_id: 2, region_id: 2, year: 2014)
+Wine.create(wine_brand_id: 1, category_id: 2, region_id: 2, year: 2014)
+Wine.create(wine_brand_id: 2, category_id: 1, region_id: 3, year: 2012)
+Wine.create(wine_brand_id: 2, category_id: 6, region_id: 3, year: 2013)
+Wine.create(wine_brand_id: 3, category_id: 3, region_id: 1, year: 2013)
+Wine.create(wine_brand_id: 4, category_id: 1, region_id: 2, year: 2013)
+Wine.create(wine_brand_id: 5, category_id: 2, region_id: 4, year: 2013)
+Wine.create(wine_brand_id: 5, category_id: 3, region_id: 4, year: 2012)
+Wine.create(wine_brand_id: 3, category_id: 2, region_id: 1, year: 2011)
+Wine.create(wine_brand_id: 6, category_id: 4, region_id: 5, year: 2016)
+Wine.create(wine_brand_id: 6, category_id: 1, region_id: 5, year: 2013)
+Wine.create(wine_brand_id: 6, category_id: 2, region_id: 5, year: 2014)
+Wine.create(wine_brand_id: 6, category_id: 3, region_id: 5, year: 2015)
 
-region1 = Region.create(name: "Jersey")
+# pairing seeds
+Pairing.create(wine_id: 1, cheese_id: 1)
+Pairing.create(wine_id: 1, cheese_id: 2)
+Pairing.create(wine_id: 1, cheese_id: 3)
+Pairing.create(wine_id: 1, cheese_id: 4)
+Pairing.create(wine_id: 1, cheese_id: 5)
+Pairing.create(wine_id: 1, cheese_id: 6)
+Pairing.create(wine_id: 1, cheese_id: 7)
+Pairing.create(wine_id: 1, cheese_id: 8)
+Pairing.create(wine_id: 1, cheese_id: 9)
+Pairing.create(wine_id: 1, cheese_id: 10)
+Pairing.create(wine_id: 1, cheese_id: 11)
+Pairing.create(wine_id: 1, cheese_id: 12)
+Pairing.create(wine_id: 1, cheese_id: 13)
+Pairing.create(wine_id: 1, cheese_id: 14)
+Pairing.create(wine_id: 2, cheese_id: 1)
+Pairing.create(wine_id: 2, cheese_id: 2)
+Pairing.create(wine_id: 2, cheese_id: 3)
+Pairing.create(wine_id: 2, cheese_id: 4)
+Pairing.create(wine_id: 2, cheese_id: 5)
+Pairing.create(wine_id: 2, cheese_id: 6)
+Pairing.create(wine_id: 2, cheese_id: 7)
+Pairing.create(wine_id: 2, cheese_id: 8)
+Pairing.create(wine_id: 2, cheese_id: 9)
+Pairing.create(wine_id: 2, cheese_id: 10)
+Pairing.create(wine_id: 2, cheese_id: 11)
+Pairing.create(wine_id: 2, cheese_id: 12)
+Pairing.create(wine_id: 2, cheese_id: 13)
+Pairing.create(wine_id: 2, cheese_id: 14)
+Pairing.create(wine_id: 3, cheese_id: 3)
+Pairing.create(wine_id: 4, cheese_id: 4)
+Pairing.create(wine_id: 5, cheese_id: 5)
+Pairing.create(wine_id: 6, cheese_id: 6)
+Pairing.create(wine_id: 7, cheese_id: 7)
+Pairing.create(wine_id: 8, cheese_id: 8)
+Pairing.create(wine_id: 9, cheese_id: 9)
+Pairing.create(wine_id: 10, cheese_id: 10)
+Pairing.create(wine_id: 11, cheese_id: 11)
+Pairing.create(wine_id: 12, cheese_id: 12)
+Pairing.create(wine_id: 13, cheese_id: 13)
+Pairing.create(wine_id: 14, cheese_id: 14)
+Pairing.create(wine_id: 2, cheese_id: 15)
+Pairing.create(wine_id: 5, cheese_id: 16)
+Pairing.create(wine_id: 3, cheese_id: 17)
+Pairing.create(wine_id: 4, cheese_id: 18)
+Pairing.create(wine_id: 5, cheese_id: 19)
+Pairing.create(wine_id: 1, cheese_id: 20)
+Pairing.create(wine_id: 6, cheese_id: 21)
+Pairing.create(wine_id: 3, cheese_id: 22)
+Pairing.create(wine_id: 7, cheese_id: 23)
+Pairing.create(wine_id: 8, cheese_id: 24)
+Pairing.create(wine_id: 9, cheese_id: 25)
+Pairing.create(wine_id: 10, cheese_id: 26)
 
-wine_brand1 = WineBrand.create(name: "Two-Buck-Chuck")
+# user seeds
+User.create(name: "Krissa", age: 24, email: "krissa@krissa.com", password: "krissa")
+User.create(name: "Scott", age: 34, email: "scott@scott.com", password: "scott")
+User.create(name: "Amanda", age: 98, email: "amanda@amanda.com", password: "amanda")
+User.create(name: "Jeff", age: 21, email: "jeff@jeff.com", password: "jeff")
+User.create(name: "Sam", age: 80, email: "sam@sam.com", password: "sam")
+User.create(name: "Leigh", age: 45, email: "leigh@leigh.com", password: "leigh")
+User.create(name: "Cody", age: 56, email: "cody@cody.com", password: "cody")
+User.create(name: "Giselle", age: 32, email: "giselle@giselle.com", password: "giselle")
+User.create(name: "Holli", age: 25, email: "holli@holli.com", password: "holli")
 
-category1 = Category.create(name: "Pinot Noir")
+# poster seeds
+Poster.create(user_id: 1)
+Poster.create(user_id: 2)
+Poster.create(user_id: 3)
+Poster.create(user_id: 4)
+Poster.create(user_id: 5)
+Poster.create(user_id: 6)
+Poster.create(user_id: 7)
+Poster.create(user_id: 8)
+Poster.create(user_id: 9)
 
-wine1 = Wine.create(category_id: category1.id, year: 2000, wine_brand_id: wine_brand1.id, region_id: region1.id)
+# reviewer seeds
+Reviewer.create(user_id: 1)
+Reviewer.create(user_id: 2)
+Reviewer.create(user_id: 3)
+Reviewer.create(user_id: 4)
+Reviewer.create(user_id: 5)
+Reviewer.create(user_id: 6)
+Reviewer.create(user_id: 7)
+Reviewer.create(user_id: 8)
+Reviewer.create(user_id: 9)
 
-cheese_brand1 = CheeseBrand.create(name: "Kraft")
+# posts seeds
+Post.create(poster_id: 1, pairing_id: 1, title: "My First Pairing!", content: "Hey all. This is my first pairing. I am really into wine and cheese because they really compliment each other. I hope you enjoyed my first pairing post.")
 
-cheese1 = Cheese.create(name: "Brie", cheese_brand_id: cheese_brand1.id)
+Post.create(poster_id: 1, pairing_id: 4, title: "Second Pairing!", content: "I have really enjoyed Hollington Cabernet Sauvignon with Organic Valley Monterey Jack. It's a great combo and especially good at a dinner party. All of my friends loved it. This site rules!")
 
-pairing1 = Pairing.create(wine_id: wine1.id, cheese_id: cheese1.id)
+Post.create(poster_id: 2, pairing_id: 6, title: "Hey", content: "Wow, do I love my wine and cheese! I can't believe I haven't tried this combo before. I thought I tried every pairing on the planet but this one is probably my favorite. I am going to suggest this to all my chef friends.")
 
-post1 = Post.create(poster_id: bob_poster.id, pairing_id: pairing1.id, title: "First Post", content: "THIS IS BOB'S CONTENT!")
-post2 = Post.create(poster_id: bob_poster.id, pairing_id: pairing1.id, title: "Second Post", content: "THIS IS BOB'S SECOND CONTENT!")
+Post.create(poster_id: 2, pairing_id: 8, title: "Meh", content: "Okay, so this paring was just meh. It wasn't the best. I think it was a bit dull and the wine just REALLY didn't go with the cheese. I hope my next pairing is better. Would love to hear your thoughts.")
 
+Post.create(poster_id: 3, pairing_id: 6, title: "Love this", content: "I think I've found the perfect wine and cheese pairing. I have recommended this to everyone I know who enjoys wine and cheese. It's ridiculously good!!! Amazing!")
 
-bob_reviewer = Reviewer.create(user_id: bob.id)
-bob_reviewer.user = bob
+Post.create(poster_id: 4, pairing_id: 3, title: "Hate wine and cheese now", content: "After trying this wine and cheese pairing, I've decided I no longer like wine and cheese together now! Yuck! Ew! Gross!!!!!")
 
-bob_review = Review.create(reviewer_id: bob_reviewer.id, post_id: post1.id)
+Post.create(poster_id: 4, pairing_id: 6, title: "Ok...", content: "Okay, I think I overreacted in my last post. I actually love this pairing and am back into wine and cheese pairings now. Yay for wine and cheese!!!")
+
+Post.create(poster_id: 5, pairing_id: 7, title: "Like it", content: "My sister got me into this pairing. I think it's really nice and great for a quiet night in.")
+
+Post.create(poster_id: 6, pairing_id: 7, title: "This is good", content: "I introduced my brother to this wine and cheese pairing. I love it! I think he loves it too. It's a really great combination of wine and cheese and I hope other people see this post and try it.")
+
+# review seeds
+Review.create(post_id: 1, reviewer_id: 3, title: "Thanks!", content: "Totally enjoyed your first pairing!")
+
+Review.create(post_id: 1, reviewer_id: 4, title: "Cool", content: "Enjoyed your first pairing. Thanks for sharing.")
+
+Review.create(post_id: 6, reviewer_id: 1, title: "Same here", content: "I don't like this pairing either.")
+
+Review.create(post_id: 6, reviewer_id: 5, title: "Really?!", content: "Wow! I can't believe this! I love this pairing!")
