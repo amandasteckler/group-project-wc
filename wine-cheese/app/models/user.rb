@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :password, presence: true
   validates :email, presence: true
   validates :email, uniqueness: true
+  validates :age, numericality: { greater_than: 20 }
 
   has_one :reviewer
   has_one :poster
@@ -72,6 +73,15 @@ class User < ApplicationRecord
    end
   end
 
+  def activity_monitoring
+   if self.poster.posts.count < 3
+     "What do you know about wine?!"
+   elsif self.poster.posts.count < 5
+     "Alright, so you know some stuff."
+   else
+     "Maybe try drinking water once in a while..."
+   end
+ end
   #
   # def password_security
   #    if self.password.include?(self.name)

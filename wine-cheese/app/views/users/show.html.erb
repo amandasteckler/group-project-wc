@@ -44,8 +44,12 @@ ___________________________________________________
 
 <h1>Last Pairing</h1>
 
-<%=@user.recent_update %>
-<%= link_to @user.poster.posts.last.title, post_path(@user.poster.posts.last) %>
+<% if @user.all_posts.count == 0 %>
+  No pairings to show.
+<% else %>
+  <%= @user.recent_update %>
+  <%= link_to @user.poster.posts.last.title, post_path(@user.poster.posts.last) %>
+<% end %>
 
 
 <br>
